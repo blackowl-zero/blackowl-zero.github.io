@@ -147,6 +147,18 @@
       border: 0; width: 100%; max-width: 360px; height: 100px;
       background: transparent; color-scheme: normal;
     }
+    .thm-stats {
+      display: grid; gap: 10px; margin: 14px 0 16px;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+    .thm-stats .stat {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 12px; display: flex; flex-direction: column;
+    }
+    .thm-stats .k { color: var(--muted); font-size: 12px; }
+    .thm-stats .k::before { content: "> "; color: var(--green); }
+    .thm-stats .v { color: var(--accent); font-size: 20px; font-weight: 700; }
+    .thm .meta .upd { color: var(--muted); }
     .thm .meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13px; }
     .thm .meta .live { color: var(--green); }
     .thm .meta .live::before {
@@ -234,11 +246,16 @@
           </div>
           <div class="term-body">
             <div><span class="prompt">fotis@kavvouras:<span class="path">~</span>$</span> <span class="cmd">curl tryhackme.com/p/fotiskavv</span></div>
-            <div class="thm-badge" id="thm-badge">
-              <script src="https://tryhackme.com/badge/t/285ee67eb31a37d11fc6d9c033aaf0c31401f4b9d95a6cb1b61da2c9e8b552466250081bb9c56657982adeeacddbc430?theme=dark"></script>
+            <!-- Ενημέρωσε τα νούμερα με το χέρι κάθε τόσο -->
+            <div class="thm-stats">
+              <div class="stat"><span class="k">rank</span><span class="v">top 20%</span></div>
+              <div class="stat"><span class="k">level</span><span class="v">6</span></div>
+              <div class="stat"><span class="k">rooms</span><span class="v">23</span></div>
+              <div class="stat"><span class="k">badges</span><span class="v">4</span></div>
+              <div class="stat"><span class="k">points</span><span class="v">2,370</span></div>
             </div>
             <div class="meta">
-              <span class="live">live progress</span>
+              <span class="live">updated <span class="upd">Oct 2026</span></span>
               <a href="https://tryhackme.com/p/fotiskavv" target="_blank" rel="noopener">full profile &rarr;</a>
             </div>
           </div>
@@ -270,6 +287,7 @@
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();  </script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
