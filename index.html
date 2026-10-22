@@ -135,6 +135,26 @@
       padding: 22px; color: var(--muted);
     }
 
+    /* TryHackMe widget */
+    .thm { padding: 0; overflow: hidden; }
+    .thm:hover { transform: none; }
+    .thm .term-body { padding: 18px 22px 20px; }
+    .thm-badge {
+      display: flex; justify-content: center; align-items: center;
+      min-height: 110px; margin: 6px 0 14px;
+    }
+    .thm-badge iframe {
+      border: 0; width: 100%; max-width: 360px; height: 100px;
+      background: transparent; color-scheme: normal;
+    }
+    .thm .meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13px; }
+    .thm .meta .live { color: var(--green); }
+    .thm .meta .live::before {
+      content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green); margin-right: 7px; vertical-align: middle;
+      box-shadow: 0 0 8px var(--green);
+    }
+
     .links { list-style: none; display: grid; gap: 10px; }
     .links li::before { content: "> "; color: var(--green); }
 
@@ -157,6 +177,7 @@
       <ul>
         <li><a href="#about">about</a></li>
         <li><a href="#projects">projects</a></li>
+        <li><a href="#tryhackme">tryhackme</a></li>
         <li><a href="#writeups">writeups</a></li>
         <li><a href="#contact">contact</a></li>
       </ul>
@@ -204,6 +225,26 @@
         </div>
       </section>
 
+      <section id="tryhackme">
+        <h2>tryhackme</h2>
+        <div class="terminal thm">
+          <div class="bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="title">thm@fotiskavv: ~/progress</span>
+          </div>
+          <div class="term-body">
+            <div><span class="prompt">fotis@kavvouras:<span class="path">~</span>$</span> <span class="cmd">curl tryhackme.com/p/fotiskavv</span></div>
+            <div class="thm-badge" id="thm-badge">
+              <script src="https://tryhackme.com/badge/t/285ee67eb31a37d11fc6d9c033aaf0c31401f4b9d95a6cb1b61da2c9e8b552466250081bb9c56657982adeeacddbc430?theme=dark"></script>
+            </div>
+            <div class="meta">
+              <span class="live">live progress</span>
+              <a href="https://tryhackme.com/p/fotiskavv" target="_blank" rel="noopener">full profile &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="writeups">
         <h2>writeups</h2>
         <div class="empty">
@@ -229,7 +270,6 @@
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    document.getElementById("year").textContent = new Date().getFullYear();  </script>
 </body>
 </html>
